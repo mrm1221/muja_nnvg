@@ -3,57 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menu - KSM Online</title>
+  <title>Our Menu - KSM Online Restaurant</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: url('images/nonveg-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    h1 {
+      color: #FFEB3B; /* bright yellow for title */
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    }
+    .menu-item h2 {
+      color: #00E5FF; /* cyan headings */
+    }
+    .details p {
+      color: #fff;
+    }
+  </style>
 </head>
-<body style="background-image: url('images/nonveg-bg.jpg');">
+<body>
   <div class="container">
-    <h1>🍗 Our Non-Vegetarian Menu</h1>
+    <h1>🍗 Our Chicken Menu</h1>
     <a href="index.html" class="nav-link">⬅ Back to Home</a>
 
-    <!-- 5 Non-Veg Items -->
+    <!-- Item 1 -->
     <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>Chicken Biryani</h2>
+      <h2>Raw Boneless</h2>
       <div class="details">
-        <img src="images/chicken-biryani.jpg" alt="Chicken Biryani" />
-        <p>Spiced chicken cooked with long-grain basmati rice.</p>
-        <p><strong>Price:</strong> $10.99</p>
+        <img src="images/raw-boneless.jpg" alt="Raw Boneless Chicken" />
+        <p>Fresh, skinless, boneless chicken pieces perfect for curries and grills.</p>
+        <p><strong>Price:</strong> $7.50 / kg</p>
       </div>
     </div>
 
+    <!-- Item 2 -->
     <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>Grilled Chicken</h2>
+      <h2>Raw Whole Chicken</h2>
       <div class="details">
-        <img src="images/grilled-chicken.jpg" alt="Grilled Chicken" />
-        <p>Smoky grilled chicken served with herb sauce.</p>
-        <p><strong>Price:</strong> $11.50</p>
+        <img src="images/raw-whole.jpg" alt="Raw Whole Chicken" />
+        <p>Whole chicken, cleaned and ready to cook for family meals.</p>
+        <p><strong>Price:</strong> $12.00 each</p>
       </div>
     </div>
 
+    <!-- Item 3 -->
     <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>Butter Chicken</h2>
+      <h2>Chicken Drumstick</h2>
       <div class="details">
-        <img src="images/butter-chicken.jpg" alt="Butter Chicken" />
-        <p>Rich and creamy tomato-based curry with tender chicken.</p>
-        <p><strong>Price:</strong> $12.00</p>
+        <img src="images/drumstick.jpg" alt="Chicken Drumstick" />
+        <p>Juicy drumsticks ideal for frying, roasting, or BBQ.</p>
+        <p><strong>Price:</strong> $6.50 / kg</p>
       </div>
     </div>
 
+    <!-- Item 4 -->
     <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>Chicken Tikka</h2>
+      <h2>Chicken Liver</h2>
       <div class="details">
-        <img src="images/chicken-tikka.jpg" alt="Chicken Tikka" />
-        <p>Juicy marinated chicken pieces grilled to perfection.</p>
-        <p><strong>Price:</strong> $9.75</p>
+        <img src="images/chicken-liver.jpg" alt="Chicken Liver" />
+        <p>Fresh chicken liver, rich in nutrients and flavor.</p>
+        <p><strong>Price:</strong> $4.00 / 500g</p>
       </div>
     </div>
 
+    <!-- Item 5 -->
     <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>Fish Curry</h2>
+      <h2>Chicken Kaleji</h2>
       <div class="details">
-        <img src="images/fish-curry.jpg" alt="Fish Curry" />
-        <p>Spicy and tangy fish curry with coastal flavors.</p>
-        <p><strong>Price:</strong> $13.50</p>
+        <img src="images/chicken-kaleji.jpg" alt="Chicken Kaleji" />
+        <p>Delicious chicken kaleji, perfect for spicy masala dishes.</p>
+        <p><strong>Price:</strong> $4.50 / 500g</p>
       </div>
     </div>
   </div>
