@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      background: linear-gradient(120deg, #e0ffe0, #ffe0e0);
+      background: url('images/chick_homepage.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -15,31 +16,55 @@
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
+      color: #fff; /* white text for dark bg */
+      text-align: center;
     }
+
+    /* Dark overlay to improve text contrast */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+      z-index: -1;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
+      color: #FFD700; /* gold/yellow for standout */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
+
     h2 {
       margin-bottom: 30px;
+      color: #fff;
+      font-weight: 400;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
+
     .language-choice {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     .lang-button {
       padding: 15px 30px;
       font-size: 1.2rem;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      color: white;
+      color: #fff;
       font-weight: bold;
-      background: #4CAF50;
+      background: #E53935; /* red button */
       transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     .lang-button:hover {
-      background: #388e3c;
+      background: #FFB300; /* yellow on hover */
       transform: scale(1.05);
     }
   </style>
