@@ -2,87 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Welcome to SpiceVilla</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KSM Online Restaurant</title>
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
   <style>
-    /* Base Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fff8f0;
-      color: #333;
+      background: url('images/chick_homepage.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
       padding: 20px;
-      line-height: 1.6;
+      position: relative;
     }
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
     }
 
     h1 {
-      font-size: 2.4em; /* Larger welcome message */
-      color: #d35400;   /* Burnt orange color */
+      font-family: 'Pacifico', cursive; /* Stylish brand font */
+      font-size: 3rem; /* increased size */
       margin-bottom: 15px;
+      color: #00E5FF; /* bright cyan/aqua */
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.9);
     }
 
-    .restaurant-name {
-      color: #27ae60;   /* Greenish color */
-      font-weight: 700;
-      font-size: 2em;   /* Bigger font size */
-      display: inline-block;
-      margin-bottom: 10px;
+    h2 {
+      margin-bottom: 40px;
+      font-size: 1.6rem; /* increased size */
+      color: #FFA726; /* orange */
+      font-weight: 600;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
-    p {
-      font-size: 1.1em;
-      margin-bottom: 12px;
+    .language-choice {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
     }
 
-    /* Mobile Responsive */
-    @media screen and (max-width: 600px) {
-      body {
-        padding: 15px;
-      }
+    .lang-button {
+      flex: 1 1 45%;
+      max-width: 180px;
+      padding: 16px 22px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+      background: #E53935; /* red */
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
 
-      .container {
-        padding: 20px;
-      }
+    .lang-button:hover {
+      background: #FFEB3B; /* yellow hover */
+      color: #000;
+      transform: scale(1.05);
+    }
 
+    /* Mobile-friendly */
+    @media (max-width: 480px) {
       h1 {
-        font-size: 2em;
+        font-size: 2.4rem;
       }
-
-      .restaurant-name {
-        font-size: 1.7em;
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
       }
-
-      p {
-        font-size: 1em;
+      .lang-button {
+        flex: 1 1 100%;
+        max-width: 90%;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <h1>🍽️ KSM Online Restaurant</h1>
+  <h2>Welcome! Please choose your language</h2>
 
-  <div class="container">
-    <h1>Welcome to <span class="restaurant-name">SpiceVilla</span></h1>
-    <p>Experience the authentic taste of India with dishes made from fresh, local ingredients and a whole lot of love.</p>
+  <div class="language-choice">
+    <button class="lang-button" onclick="location.href='menu.html?lang=en'">English</button>
+    <button class="lang-button" onclick="location.href='menu.html?lang=hi'">हिन्दी</button>
   </div>
-
 </body>
 </html>
