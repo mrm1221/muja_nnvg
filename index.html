@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KSM Online Restaurant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(120deg, #e0ffe0, #ffe0e0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-bottom: 30px;
+    }
+    .language-choice {
+      display: flex;
+      gap: 20px;
+    }
+    .lang-button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      background: #4CAF50;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .lang-button:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>🍽️ KSM Online Restaurant</h1>
+  <h2>Welcome! Please choose your language</h2>
+
+  <div class="language-choice">
+    <button class="lang-button" onclick="location.href='menu.html?lang=en'">English</button>
+    <button class="lang-button" onclick="location.href='menu.html?lang=hi'">हिन्दी</button>
+  </div>
+</body>
+</html>
