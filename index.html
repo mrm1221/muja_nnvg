@@ -3,108 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KSM Online Restaurant</title>
+  <title>Restaurant Home</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500&display=swap" rel="stylesheet">
-
   <style>
     body {
-      background: url('images/chick_homepage.jpg') no-repeat center center fixed;
-      background-size: cover;
+      margin: 0;
+      padding: 0;
+      background: url('chick_homepage.jpg') no-repeat center center/cover;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
       text-align: center;
-      position: relative;
-      padding: 20px;
-    }
-
-    /* Overlay to darken background */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.55);
-      z-index: -1;
-    }
-
-    /* Restaurant Name */
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 3.2rem;
-      margin-bottom: 15px;
-      color: #FFD700; /* gold */
-      text-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 18px rgba(0, 0, 0, 0.8);
-    }
-
-    /* Welcome Message */
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      margin-bottom: 40px;
-      font-size: 1.8rem;
-      color: #00E676; /* green-cyan */
-      text-shadow: 0 0 10px rgba(0, 230, 118, 0.8), 0 0 18px rgba(0,0,0,0.7);
-    }
-
-    .language-choice {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .lang-button {
-      flex: 1 1 45%;
-      max-width: 180px;
-      padding: 16px 22px;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
       color: #fff;
-      font-weight: bold;
-      background: #E53935;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    .lang-button:hover {
-      background: #FFEB3B;
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
+      color: #ffcc00; /* gold shade */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Arial Black', sans-serif;
+      color: #ff4444; /* bright red */
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    .lang-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .lang-buttons a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ffcc00;
       color: #000;
-      transform: scale(1.05);
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
 
-    /* Mobile adjustments */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 1.3rem;
-        margin-bottom: 30px;
-      }
-      .lang-button {
-        flex: 1 1 100%;
-        max-width: 90%;
-        font-size: 1rem;
-      }
+    .lang-buttons a:hover {
+      background: #ffaa00;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .lang-buttons a { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <h1>🍽️ KSM Online Restaurant</h1>
-  <h2>Welcome! Please choose your language</h2>
+  <div class="overlay">
+    <h1>🍗 Chicken Delight</h1>
+    <h2>Welcome to Our Restaurant</h2>
 
-  <div class="language-choice">
-    <button class="lang-button" onclick="location.href='menu.html?lang=en'">English</button>
-    <button class="lang-button" onclick="location.href='menu.html?lang=hi'">हिन्दी</button>
+    <div class="lang-buttons">
+      <a href="menu_select.html?lang=en">English</a>
+      <a href="menu_select.html?lang=hi">हिंदी</a>
+    </div>
   </div>
 </body>
 </html>
