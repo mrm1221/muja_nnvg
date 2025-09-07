@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegetarian Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/veg_menu.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.65); /* dark overlay for readability */
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 20px 0;
+      color: #ffcc00; /* golden yellow */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    }
+
+    .menu-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .menu-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 15px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .menu-item:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .menu-item h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #ffeb3b; /* bright yellow */
+    }
+
+    .details {
+      display: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #f1f1f1;
+    }
+
+    .details img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 18px;
+      background: #ff4444;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-link:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🥦 Vegetarian Menu</h1>
+    <div class="menu-container">
+
+      <a href="menu_select.html?lang=en" class="back-link">⬅ Back to Menu Selection</a>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Paneer Butter Masala</h2>
+        <div class="details">
+          <img src="images/paneer.jpg" alt="Paneer Butter Masala"/>
+          <p>Creamy tomato gravy with soft paneer cubes.</p>
+          <p><strong>Price:</strong> ₹180</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Chole Bhature</h2>
+        <div class="details">
+          <img src="images/chole.jpg" alt="Chole Bhature"/>
+          <p>Spicy chickpeas served with fried bread (bhature).</p>
+          <p><strong>Price:</strong> ₹120</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Masala Dosa</h2>
+        <div class="details">
+          <img src="images/dosa.jpg" alt="Masala Dosa"/>
+          <p>South Indian crispy dosa stuffed with spiced potatoes.</p>
+          <p><strong>Price:</strong> ₹100</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Veg Biryani</h2>
+        <div class="details">
+          <img src="images/veg-biryani.jpg" alt="Veg Biryani"/>
+          <p>Fragrant basmati rice cooked with vegetables and spices.</p>
+          <p><strong>Price:</strong> ₹150</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Palak Paneer</h2>
+        <div class="details">
+          <img src="images/palak-paneer.jpg" alt="Palak Paneer"/>
+          <p>Paneer cubes cooked in creamy spinach curry.</p>
+          <p><strong>Price:</strong> ₹160</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Rajma Chawal</h2>
+        <div class="details">
+          <img src="images/rajma.jpg" alt="Rajma Chawal"/>
+          <p>Red kidney beans curry served with steamed rice.</p>
+          <p><strong>Price:</strong> ₹130</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Aloo Paratha</h2>
+        <div class="details">
+          <img src="images/aloo-paratha.jpg" alt="Aloo Paratha"/>
+          <p>Stuffed wheat flatbread with spiced potato filling.</p>
+          <p><strong>Price:</strong> ₹80</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Dal Tadka</h2>
+        <div class="details">
+          <img src="images/dal.jpg" alt="Dal Tadka"/>
+          <p>Yellow dal tempered with spices and ghee.</p>
+          <p><strong>Price:</strong> ₹100</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Malai Kofta</h2>
+        <div class="details">
+          <img src="images/malai-kofta.jpg" alt="Malai Kofta"/>
+          <p>Fried cottage cheese dumplings in rich cream curry.</p>
+          <p><strong>Price:</strong> ₹200</p>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="toggleDetails(this)">
+        <h2>Pav Bhaji</h2>
+        <div class="details">
+          <img src="images/pav-bhaji.jpg" alt="Pav Bhaji"/>
+          <p>Spiced mashed vegetables served with buttered pav buns.</p>
+          <p><strong>Price:</strong> ₹120</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
