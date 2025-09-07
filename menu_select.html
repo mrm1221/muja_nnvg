@@ -3,110 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Select Menu | KSM Online Restaurant</title>
+  <title>Select Menu</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500&display=swap" rel="stylesheet">
-
   <style>
     body {
-      background: url('images/veg_nonveg.jpg') no-repeat center center fixed;
-      background-size: cover;
+      margin: 0;
+      padding: 0;
+      background: url('veg_nonveg.jpg') no-repeat center center/cover;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
       text-align: center;
-      position: relative;
-      padding: 20px;
+      color: #fff;
     }
 
-    /* Overlay for readability */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.55);
-      z-index: -1;
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
     }
 
     h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #FFD700; /* gold */
-      text-shadow: 0 0 12px rgba(255, 215, 0, 0.9), 0 0 20px rgba(0,0,0,0.8);
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-      color: #00E676; /* green-cyan */
-      text-shadow: 0 0 10px rgba(0, 230, 118, 0.8);
-    }
-
-    .menu-choice {
+    .menu-buttons {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .menu-button {
-      flex: 1 1 40%;
-      max-width: 200px;
-      padding: 18px 25px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
+    .menu-buttons a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff4444;
       color: #fff;
+      font-size: 1.2rem;
       font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
 
-    .veg {
-      background-color: #4CAF50; /* green */
-    }
-    .veg:hover {
-      background-color: #66BB6A;
-      transform: scale(1.05);
+    .menu-buttons a:hover {
+      background: #cc0000;
     }
 
-    .nonveg {
-      background-color: #E53935; /* red */
-    }
-    .nonveg:hover {
-      background-color: #FF5252;
-      transform: scale(1.05);
-    }
-
-    /* Mobile adjustments */
-    @media (max-width: 480px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.2rem; margin-bottom: 25px; }
-      .menu-button {
-        flex: 1 1 100%;
-        max-width: 90%;
-        font-size: 1rem;
-      }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .menu-buttons a { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <h1>🍴 KSM Online Restaurant</h1>
-  <h2>Please select your menu type</h2>
+  <div class="overlay">
+    <h1 id="title">Choose Menu</h1>
 
-  <div class="menu-choice">
-    <button class="menu-button veg" onclick="location.href='veg.html'">🥦 Vegetarian</button>
-    <button class="menu-button nonveg" onclick="location.href='menu.html'">🍗 Non-Vegetarian</button>
+    <div class="menu-buttons">
+      <a id="vegLink" href="veg.html">Veg Menu 🥦</a>
+      <a id="nonvegLink" href="menu.html">Non-Veg Menu 🍗</a>
+    </div>
   </div>
+
+  <script>
+    // Detect language from URL
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get("lang") || "en";
+
+    if (lang === "hi") {
+      document.getElementById("title").textContent = "मेनू चुनें";
+      document.getElementById("vegLink").textContent = "शाकाहारी मेनू 🥦";
+      document.getElementById("nonvegLink").textContent = "मांसाहारी मेनू 🍗";
+    }
+  </script>
 </body>
 </html>
