@@ -68,7 +68,7 @@
 
     <div class="menu-buttons">
       <a id="vegLink" href="veg.html">Veg Menu 🥦</a>
-      <a id="nonvegLink" href="menu.html">Non-Veg Menu 🍗</a>
+      <a id="nonvegLink" href="nonveg.html">Non-Veg Menu 🍗</a>
     </div>
   </div>
 
@@ -80,7 +80,9 @@
     if (lang === "hi") {
       document.getElementById("title").textContent = "मेनू चुनें";
       document.getElementById("vegLink").textContent = "शाकाहारी मेनू 🥦";
+      document.getElementById("vegLink").setAttribute("href", "veg_hi.html");   // ✅ Hindi Veg link
       document.getElementById("nonvegLink").textContent = "मांसाहारी मेनू 🍗";
+      document.getElementById("nonvegLink").setAttribute("href", "nonveg_hi.html"); // ✅ Hindi Non-Veg link
     }
   </script>
 </body>
