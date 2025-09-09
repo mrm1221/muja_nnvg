@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>मांसाहारी मेनू</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/veg_menu.jpg') no-repeat center center/cover; /* ✅ use your uploaded image */
+      font-family: "Noto Sans Devanagari", sans-serif;
+      color: #fff;
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.7);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #FFD700;
+      text-shadow: 2px 2px 8px #000;
+      margin-bottom: 30px;
+    }
+
+    .menu-item {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      margin: 15px 0;
+      padding: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .menu-item:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: scale(1.02);
+    }
+
+    .menu-item h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #FF6347; /* Tomato red for meat items */
+    }
+
+    .details {
+      display: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .details img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #444;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🍗 मांसाहारी मेनू</h1>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>कच्चा बिना हड्डी वाला चिकन</h2>
+      <div class="details">
+        <img src="images/raw_boneless.jpg" alt="Raw Boneless Chicken">
+        <p>ताज़ा और बिना हड्डी का चिकन, करी या फ्राई के लिए उत्तम।</p>
+        <p class="price">₹250 / 500 ग्राम</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>कच्चा पूरा चिकन</h2>
+      <div class="details">
+        <img src="images/whole_chicken.jpg" alt="Whole Chicken">
+        <p>पूरा ताज़ा चिकन, बिरयानी और रोस्ट के लिए उपयुक्त।</p>
+        <p class="price">₹450 प्रति पीस</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>चिकन ड्रमस्टिक</h2>
+      <div class="details">
+        <img src="images/drumstick.jpg" alt="Chicken Drumstick">
+        <p>स्वादिष्ट चिकन ड्रमस्टिक, ग्रिल और फ्राई के लिए सबसे अच्छा।</p>
+        <p class="price">₹280 / 500 ग्राम</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>चिकन लीवर</h2>
+      <div class="details">
+        <img src="images/chicken_liver.jpg" alt="Chicken Liver">
+        <p>पौष्टिक चिकन लीवर, मसालेदार करी के लिए बेहतरीन।</p>
+        <p class="price">₹200 / 500 ग्राम</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>चिकन कलेजी</h2>
+      <div class="details">
+        <img src="images/chicken_kaleji.jpg" alt="Chicken Kaleji">
+        <p>मसालेदार और स्वादिष्ट कलेजी, ताज़ी और नरम।</p>
+        <p class="price">₹220 / 500 ग्राम</p>
+      </div>
+    </div>
+
+    <a href="menu_select.html?lang=hi" class="nav-link">⬅ वापस जाएँ</a>
+  </div>
+
+  <script>
+    function toggleDetails(item) {
+      const details = item.querySelector('.details');
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
