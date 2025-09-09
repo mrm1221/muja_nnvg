@@ -7,120 +7,115 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      background-image: url('images/veg_menu.jpg'); /* your provided image */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      background: url('images/veg_menu.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       color: #fff;
     }
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      color: #FFD700; /* golden */
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      overflow-y: auto;
+      max-height: 90vh;
     }
-    .details p {
-      color: #f8f8f8;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-list li {
+      margin: 12px 0;
+    }
+
+    .menu-list button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #2ecc71; /* green to suit veg */
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .menu-list button:hover {
+      background: #27ae60;
+    }
+
+    .details {
+      margin-top: 25px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      font-size: 1.1rem;
+      color: #ffeb99; /* golden-yellow for contrast */
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .menu-list button { font-size: 1rem; padding: 10px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="overlay">
     <h1>🥦 शाकाहारी मेनू</h1>
+    <ul class="menu-list">
+      <li><button onclick="showDetails('paneer')">पनीर बटर मसाला</button></li>
+      <li><button onclick="showDetails('chole')">छोले भटूरे</button></li>
+      <li><button onclick="showDetails('dosa')">मसाला डोसा</button></li>
+      <li><button onclick="showDetails('dal')">दाल मखनी</button></li>
+      <li><button onclick="showDetails('aloo')">आलू पराठा</button></li>
+      <li><button onclick="showDetails('pav')">पाव भाजी</button></li>
+      <li><button onclick="showDetails('biryani')">वेज बिरयानी</button></li>
+      <li><button onclick="showDetails('idli')">इडली सांभर</button></li>
+      <li><button onclick="showDetails('poha')">पोहा</button></li>
+      <li><button onclick="showDetails('kadhi')">कढ़ी चावल</button></li>
+    </ul>
 
-    <a href="menu_select.html?lang=hi" class="nav-link">⬅ वापस जाएँ</a>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>पनीर टिक्का</h2>
-      <div class="details">
-        <img src="images/paneer.jpg" alt="पनीर टिक्का" />
-        <p>मसालेदार मैरिनेड में ग्रिल किया हुआ पनीर।</p>
-        <p><strong>कीमत:</strong> ₹199</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>वेज बिरयानी</h2>
-      <div class="details">
-        <img src="images/veg-biryani.jpg" alt="वेज बिरयानी" />
-        <p>खुशबूदार चावल, सब्ज़ियों और मसालों के साथ पकाया हुआ।</p>
-        <p><strong>कीमत:</strong> ₹179</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>छोले भटूरे</h2>
-      <div class="details">
-        <img src="images/chole-bhature.jpg" alt="छोले भटूरे" />
-        <p>मसालेदार छोले गरमागरम भटूरों के साथ।</p>
-        <p><strong>कीमत:</strong> ₹149</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>मसाला डोसा</h2>
-      <div class="details">
-        <img src="images/masala-dosa.jpg" alt="मसाला डोसा" />
-        <p>खस्ता डोसा आलू मसाले के साथ परोसा जाता है।</p>
-        <p><strong>कीमत:</strong> ₹120</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>राजमा चावल</h2>
-      <div class="details">
-        <img src="images/rajma-chawal.jpg" alt="राजमा चावल" />
-        <p>राजमा करी बासमती चावल के साथ।</p>
-        <p><strong>कीमत:</strong> ₹130</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>आलू पराठा</h2>
-      <div class="details">
-        <img src="images/aloo-paratha.jpg" alt="आलू पराठा" />
-        <p>मसालेदार आलू से भरा हुआ पराठा दही/अचार के साथ।</p>
-        <p><strong>कीमत:</strong> ₹80</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>पूरी सब्ज़ी</h2>
-      <div class="details">
-        <img src="images/poori-sabzi.jpg" alt="पूरी सब्ज़ी" />
-        <p>गरमागरम पूरी आलू की सब्ज़ी के साथ।</p>
-        <p><strong>कीमत:</strong> ₹90</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>खिचड़ी</h2>
-      <div class="details">
-        <img src="images/khichdi.jpg" alt="खिचड़ी" />
-        <p>चावल और दाल से बनी पारंपरिक डिश।</p>
-        <p><strong>कीमत:</strong> ₹100</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>पाव भाजी</h2>
-      <div class="details">
-        <img src="images/pav-bhaji.jpg" alt="पाव भाजी" />
-        <p>मसालेदार सब्ज़ियों का मिश्रण मक्खन लगे पाव के साथ।</p>
-        <p><strong>कीमत:</strong> ₹140</p>
-      </div>
-    </div>
-
-    <div class="menu-item" onclick="toggleDetails(this)">
-      <h2>दाल मखनी</h2>
-      <div class="details">
-        <img src="images/dal-makhani.jpg" alt="दाल मखनी" />
-        <p>क्रीमी और स्वादिष्ट दाल मखनी ताज़े मक्खन के साथ।</p>
-        <p><strong>कीमत:</strong> ₹160</p>
-      </div>
-    </div>
+    <div id="detailsBox" class="details"></div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function showDetails(item) {
+      const details = {
+        paneer: "पनीर बटर मसाला - मलाईदार टमाटर की ग्रेवी में पकाया हुआ पनीर का व्यंजन।",
+        chole: "छोले भटूरे - मसालेदार छोले के साथ तली हुई भटूरा रोटी।",
+        dosa: "मसाला डोसा - कुरकुरा डोसा आलू मसाले के साथ परोसा जाता है।",
+        dal: "दाल मखनी - क्रीम और मक्खन में पकी हुई काली दाल।",
+        aloo: "आलू पराठा - आलू मसाले से भरी हुई तवा पर तली रोटी।",
+        pav: "पाव भाजी - मक्खन में तली हुई सब्ज़ियों की भाजी और पाव।",
+        biryani: "वेज बिरयानी - मसालेदार चावल और सब्ज़ियों का स्वादिष्ट व्यंजन।",
+        idli: "इडली सांभर - दक्षिण भारतीय व्यंजन, इडली के साथ सांभर।",
+        poha: "पोहा - हल्का नाश्ता, पोहे और मूंगफली से बना।",
+        kadhi: "कढ़ी चावल - दही और बेसन की कढ़ी चावल के साथ।"
+      };
+
+      const box = document.getElementById("detailsBox");
+      box.textContent = details[item];
+      box.style.display = "block";
+    }
+  </script>
 </body>
 </html>
