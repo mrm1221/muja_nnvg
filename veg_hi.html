@@ -1,86 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Selection</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>शाकाहारी मेनू</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: url('images/veg_nonveg.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      background-image: url('images/veg_menu.jpg'); /* your provided image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
     }
     h1 {
-      font-size: 2.5rem;
-      color: #FFD700;
-      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2rem;
+      color: #FFD700; /* golden */
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
-    .menu-btn {
-      display: block;
-      width: 250px;
-      margin: 10px auto;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid #FFD700;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      color: #FFD700;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-    .menu-btn:hover {
-      background: rgba(255, 215, 0, 0.3);
+    .details p {
+      color: #f8f8f8;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1 id="title">Menu Selection</h1>
-    <div id="menu-options">
-      <!-- Options will load based on selected language -->
+  <div class="container">
+    <h1>🥦 शाकाहारी मेनू</h1>
+
+    <a href="menu_select.html?lang=hi" class="nav-link">⬅ वापस जाएँ</a>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>पनीर टिक्का</h2>
+      <div class="details">
+        <img src="images/paneer.jpg" alt="पनीर टिक्का" />
+        <p>मसालेदार मैरिनेड में ग्रिल किया हुआ पनीर।</p>
+        <p><strong>कीमत:</strong> ₹199</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>वेज बिरयानी</h2>
+      <div class="details">
+        <img src="images/veg-biryani.jpg" alt="वेज बिरयानी" />
+        <p>खुशबूदार चावल, सब्ज़ियों और मसालों के साथ पकाया हुआ।</p>
+        <p><strong>कीमत:</strong> ₹179</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>छोले भटूरे</h2>
+      <div class="details">
+        <img src="images/chole-bhature.jpg" alt="छोले भटूरे" />
+        <p>मसालेदार छोले गरमागरम भटूरों के साथ।</p>
+        <p><strong>कीमत:</strong> ₹149</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>मसाला डोसा</h2>
+      <div class="details">
+        <img src="images/masala-dosa.jpg" alt="मसाला डोसा" />
+        <p>खस्ता डोसा आलू मसाले के साथ परोसा जाता है।</p>
+        <p><strong>कीमत:</strong> ₹120</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>राजमा चावल</h2>
+      <div class="details">
+        <img src="images/rajma-chawal.jpg" alt="राजमा चावल" />
+        <p>राजमा करी बासमती चावल के साथ।</p>
+        <p><strong>कीमत:</strong> ₹130</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>आलू पराठा</h2>
+      <div class="details">
+        <img src="images/aloo-paratha.jpg" alt="आलू पराठा" />
+        <p>मसालेदार आलू से भरा हुआ पराठा दही/अचार के साथ।</p>
+        <p><strong>कीमत:</strong> ₹80</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>पूरी सब्ज़ी</h2>
+      <div class="details">
+        <img src="images/poori-sabzi.jpg" alt="पूरी सब्ज़ी" />
+        <p>गरमागरम पूरी आलू की सब्ज़ी के साथ।</p>
+        <p><strong>कीमत:</strong> ₹90</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>खिचड़ी</h2>
+      <div class="details">
+        <img src="images/khichdi.jpg" alt="खिचड़ी" />
+        <p>चावल और दाल से बनी पारंपरिक डिश।</p>
+        <p><strong>कीमत:</strong> ₹100</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>पाव भाजी</h2>
+      <div class="details">
+        <img src="images/pav-bhaji.jpg" alt="पाव भाजी" />
+        <p>मसालेदार सब्ज़ियों का मिश्रण मक्खन लगे पाव के साथ।</p>
+        <p><strong>कीमत:</strong> ₹140</p>
+      </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>दाल मखनी</h2>
+      <div class="details">
+        <img src="images/dal-makhani.jpg" alt="दाल मखनी" />
+        <p>क्रीमी और स्वादिष्ट दाल मखनी ताज़े मक्खन के साथ।</p>
+        <p><strong>कीमत:</strong> ₹160</p>
+      </div>
     </div>
   </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const lang = params.get("lang") || "en";
-
-    const menuOptions = {
-      en: [
-        { name: "Vegetarian Menu", link: "veg.html" },
-        { name: "Non-Vegetarian Menu", link: "nonveg.html" }
-      ],
-      hi: [
-        { name: "शाकाहारी मेनू", link: "veg_hi.html" },  // ✅ fixed (Hindi Veg goes to veg_hi.html)
-        { name: "मांसाहारी मेनू", link: "nonveg_hi.html" } // ✅ Hindi Non-Veg page
-      ]
-    };
-
-    document.getElementById("title").innerText = lang === "hi" ? "मेनू चयन" : "Menu Selection";
-
-    const menuContainer = document.getElementById("menu-options");
-    menuOptions[lang].forEach(option => {
-      const a = document.createElement("a");
-      a.className = "menu-btn";
-      a.href = option.link;
-      a.innerText = option.name;
-      menuContainer.appendChild(a);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
